@@ -17,7 +17,6 @@ build-mode = "both"
 included-patches = "compact-header"
 excluded-patches = "vanced-microg-support"
 
-[Tiktok]
-apkmirror-dlurl = "https://apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
-apkmirror-arch = "arm64-v8a"
+[TikTok]
+uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
 build-mode = "both"
