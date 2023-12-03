@@ -1,6 +1,7 @@
 YouTube: 18.45.43  
 Sync: v23.06.30-13:39  
 Music: 6.29.57  
+Tiktok: 30.8.3  
 Strava: 320.12  
 Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) module to detach YouTube and YT Music from Play Store  
 
