@@ -7,9 +7,8 @@ enable-magisk-update = true   # set this to false if you do not want to receive 
 # you can use rvmm-config-gen to generate a config
 
 [Tiktok]
-apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
+apkmirror-dlurl = "https://archive.org/download/jhc-apks/apks/com.zhiliaoapp.musically"
 build-mode = "module"
-version = "30.8.3"
 
 [YouTube]
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube/"
