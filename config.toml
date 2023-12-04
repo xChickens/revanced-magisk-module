@@ -13,7 +13,7 @@ build-mode = "module"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube/"
 build-mode = "module"
 included-patches = "'Custom branding' 'Remove player controls background'"
-excluded-patches = "'Alternative thumbnails' 'Premium heading' 'Wide searchbar' 'Hide captions button' 'Hide cast button' 'Hide player buttons' 'Hide autoplay button' 'Hide video action buttons' 'Hide timestamp' 'Hide layout components' 'Hide endscreen cards' 'Hide email address' 'Disable fullscreen ambient mode' 'Disable suggested video end screen' 'Hide seekbar' 'Hide Shorts components' 'Hide info cards' 'Comments' 'Enable tablet layout' 'Tablet mini player' 'Spoof device dimensions' 'Always autorepeat' 'Announcements' 'Enable debugging' 'Disable precise seeking gesture'"
+excluded-patches = "'Alternative thumbnails' 'Premium heading' 'Hide captions button' 'Hide cast button' 'Hide player buttons' 'Hide autoplay button' 'Hide video action buttons' 'Hide timestamp' 'Hide layout components' 'Hide endscreen cards' 'Hide email address' 'Disable fullscreen ambient mode' 'Disable suggested video end screen' 'Hide seekbar' 'Hide info cards' 'Comments' 'Enable tablet layout' 'Tablet mini player' 'Spoof device dimensions' 'Always autorepeat' 'Announcements' 'Enable debugging' 'Disable precise seeking gesture'"
 
 [Sync]
 apkmirror-dlurl = "https://apkmirror.com/apk/red-apps-ltd/sync-for-reddit/"
