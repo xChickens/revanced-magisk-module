@@ -1,14 +1,14 @@
 YouTube: 18.45.43  
-Music: 6.29.57  
+Music: 6.31.55  
 Sync: v23.06.30-13:39  
 Strava: 320.12  
-Tiktok: 30.8.4  
+Tiktok: 32.5.3  
 Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) module to detach YouTube and YT Music from Play Store  
 
 [revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module)  
 
 Changelog:  
-CLI: j-hc/revanced-cli-4.1.0-all.jar  
-Integrations: ReVanced/revanced-integrations-0.125.0.apk  
-Patches: ReVanced/revanced-patches-2.202.0.jar  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v2.202.0)  
+CLI: j-hc/revanced-cli-4.3.0-all.jar  
+Integrations: ReVanced/revanced-integrations-1.0.0.apk  
+Patches: ReVanced/revanced-patches-3.0.1.jar  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v3.0.1)  
