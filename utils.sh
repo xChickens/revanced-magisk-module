@@ -324,7 +324,7 @@ get_archive_pkg_name() { echo "$__ARCHIVE_PKG_NAME__"; }
 patch_apk() {
 	local stock_input=$1 patched_apk=$2 patcher_args=$3 rv_cli_jar=$4 rv_patches_jar=$5
 	local cmd="java -jar $rv_cli_jar patch $stock_input -p -o $patched_apk -b $rv_patches_jar \
---keystore=ks.keystore --keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --alias=jhc $patcher_args --options=options.json"
+--keystore=ks.keystore --keystore-entry-password=123456789 --keystore-password=123456789 --signer=xChickens --alias=xChickens $patcher_args --options=options.json"
 	if [ "$OS" = Android ]; then cmd+=" --custom-aapt2-binary=${TEMP_DIR}/aapt2"; fi
 	pr "$cmd"
 	if [ "${DRYRUN:-}" = true ]; then
@@ -546,7 +546,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=xChickens
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MAGISK_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
