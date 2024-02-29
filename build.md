@@ -1,8 +1,8 @@
 Sync: v23.06.30-13:39  
-Strava: 320.12  
-Music: 6.37.50  
 YouTube: 19.04.37  
 Tiktok: 32.5.3  
+Strava: 320.12  
+Music: 6.40.52  
 
 Install [Vanced Microg](https://github.com/TeamVanced/VancedMicroG/releases) for non-root YouTube and YT Music  
 Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) module to detach YouTube and YT Music from Play Store  
