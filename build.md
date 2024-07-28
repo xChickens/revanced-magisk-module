@@ -1,6 +1,6 @@
+Music: 7.03.52  
 Sync: v23.06.30-13:39  
 Strava: 320.12  
-Music: 7.03.52  
 YouTube: 19.16.39  
 Tiktok: 32.5.3  
 
@@ -10,6 +10,6 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 [revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module)
   
 CLI: j-hc/revanced-cli-4.6.0-all.jar  
-Integrations: ReVanced/revanced-integrations-1.12.0-dev.3.apk  
-Patches: ReVanced/revanced-patches-4.12.0-dev.8.jar  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v4.12.0-dev.8)  
+Integrations: ReVanced/revanced-integrations-1.12.0-dev.5.apk  
+Patches: ReVanced/revanced-patches-4.12.0-dev.9.jar  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v4.12.0-dev.9)  
