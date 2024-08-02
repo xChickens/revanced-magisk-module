@@ -1,7 +1,7 @@
 Sync: v23.06.30-13:39  
+YouTube: 19.16.39  
 Strava: 320.12  
 Music: 7.03.52  
-YouTube: 19.16.39  
 Tiktok: 32.5.3  
 
 Install [Microg](https://github.com/ReVanced/GmsCore/releases) for non-root YouTube and YT Music APKs  
@@ -10,6 +10,6 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 [revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module)
   
 CLI: j-hc/revanced-cli-4.6.0-all.jar  
-Integrations: ReVanced/revanced-integrations-1.12.0-dev.7.apk  
-Patches: ReVanced/revanced-patches-4.12.0-dev.14.jar  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v4.12.0-dev.14)  
+Integrations: ReVanced/revanced-integrations-1.12.0-dev.8.apk  
+Patches: ReVanced/revanced-patches-4.12.0-dev.15.jar  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v4.12.0-dev.15)  
