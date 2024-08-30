@@ -1,4 +1,5 @@
 #!/system/bin/sh
+setenforce 0
 MODDIR=${0%/*}
 RVPATH=/data/adb/rvhc/${MODDIR##*/}.apk
 . "$MODDIR/config"
@@ -42,3 +43,4 @@ fi
 mount -o bind "$RVPATH" "$BASEPATH/base.apk"
 am force-stop "$PKG_NAME"
 [ -f "$MODDIR/err" ] && mv -f "$MODDIR/err" "$MODDIR/module.prop"
+setenforce 1
