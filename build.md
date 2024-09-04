@@ -1,6 +1,6 @@
 Sync: v23.06.30-13:39  
-Strava: 320.12  
 Music: 7.03.52  
+Strava: 320.12  
 YouTube: 19.16.39  
 Tiktok: 32.5.3  
 
