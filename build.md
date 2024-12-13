@@ -1,5 +1,4 @@
 Music: 7.31.51  
-Strava: 320.12  
 Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
 Twitter: 10.71.1-release.0  
@@ -10,6 +9,6 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
-CLI: ReVanced/revanced-cli-5.0.0-all.jar  
+CLI: j-hc/revanced-cli-5.0.0-all.jar  
 Patches: ReVanced/patches-5.3.0.rvp  
 [Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.3.0)  
