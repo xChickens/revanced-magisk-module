@@ -1,7 +1,7 @@
 Music: 7.29.52  
 Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
-Twitter: 10.72.1-release.0  
+Twitter: 10.72.3-release.0  
 YouTube: 19.47.53  
 
 Install [Microg](https://github.com/ReVanced/GmsCore/releases) for non-root YouTube and YT Music APKs  
@@ -10,5 +10,5 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
 CLI: j-hc/revanced-cli-5.0.0-all.jar  
-Patches: ReVanced/patches-5.7.2.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.7.2)  
+Patches: ReVanced/patches-5.8.0.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.8.0)  
