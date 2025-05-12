@@ -16,7 +16,8 @@ build-mode = "module"
 [Sync]
 apkmirror-dlurl = "https://www.apkmirror.com/apk/red-apps-ltd/sync-for-reddit"
 build-mode = "module"
-included-patches = "'Use /user/ endpoint'"
+patches-source = "xChickens/revanced-patches"
+included-patches = "'Fix post thumbnails'"
 patcher-args = "-e 'Spoof client' -Oclient-id=FnRpt2V-yImkvii9BZM_3Q"
 
 [TikTok]
