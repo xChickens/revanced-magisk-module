@@ -1,5 +1,4 @@
 Music: 8.05.51  
-Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
 Twitter: 10.86.0-release.0  
 YouTube: 20.12.46  
@@ -10,8 +9,8 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
 CLI: j-hc/revanced-cli-5.0.0-all.jar  
-Patches: ReVanced/patches-5.23.0.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.23.0)
+Patches: ReVanced/patches-5.24.0.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.24.0)  
 
-Patches: xChickens/patches-5.24.0.rvp  
-[Changelog](https://github.com/xChickens/revanced-patches/releases/tag/v5.24.0)  
+Skipped:  
+Patches: xChickens/patches-5.24.0.rvp    
