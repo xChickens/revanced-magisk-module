@@ -1,6 +1,6 @@
 {
-  "version": "v10.86.0-release.0 (patches: 5.24.0)",
-  "versionCode": 23,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/23/twitter-revanced-magisk-v10.86.0-release.0-all.zip",
+  "version": "v10.86.0-release.0 (patches: 5.26.0)",
+  "versionCode": 24,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/24/twitter-revanced-magisk-v10.86.0-release.0-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
