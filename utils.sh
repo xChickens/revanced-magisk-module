@@ -319,6 +319,7 @@ dl_apkmirror() {
 		local resp node app_table apkmname dlurl=""
 		apkmname=$($HTMLQ "h1.marginZero" --text <<<"$__APKMIRROR_RESP__")
 		apkmname="${apkmname,,}" apkmname="${apkmname// /-}" apkmname="${apkmname//[^a-z0-9-]/}"
+		if [ "$url" = "https://www.apkmirror.com/apk/x-corp/twitter" ]; then apkmname="x-previously-twitter"; fi
 		url="${url}/${apkmname}-${version//./-}-release/"
 		resp=$(req "$url" -) || return 1
 		node=$($HTMLQ "div.table-row.headerFont:nth-last-child(1)" -r "span:nth-child(n+3)" <<<"$resp")
