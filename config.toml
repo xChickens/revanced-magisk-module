@@ -20,10 +20,11 @@ excluded-patches = "'Custom branding name for YouTube Music' 'Disable Cairo spla
 included-patches = "'Watch history'"
 
 [Spotify]
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.spotify.music"
-# uptodown-dlurl = "https://spotify.en.uptodown.com/android"
+# archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.spotify.music"
+uptodown-dlurl = "https://spotify.en.uptodown.com/android"
 build-mode = "module"
 included-patches = "'Change lyrics provider' 'Custom theme' 'Hide Create button'"
+excluded-patches = "'Sanitize sharing links'"
 
 [Sync]
 apkmirror-dlurl = "https://www.apkmirror.com/apk/red-apps-ltd/sync-for-reddit"
