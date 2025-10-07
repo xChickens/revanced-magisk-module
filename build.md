@@ -1,5 +1,5 @@
 Music-Extended: 8.30.54  
-Spotify: 9.0.76.1115  
+Spotify: 9.0.84.1340  
 Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
 Twitter: 10.86.0-release.0  
@@ -15,8 +15,8 @@ Patches: inotia00/patches-5.12.1-dev.7.rvp
 [Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.12.1-dev.7)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
-Patches: ReVanced/patches-5.42.0-dev.14.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.42.0-dev.14)
+Patches: ReVanced/patches-5.42.0-dev.15.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.42.0-dev.15)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
