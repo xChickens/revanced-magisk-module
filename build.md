@@ -15,8 +15,8 @@ Patches: inotia00/patches-5.12.1-dev.7.rvp
 [Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.12.1-dev.7)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
-Patches: ReVanced/patches-5.42.0-dev.19.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.42.0-dev.19)
+Patches: ReVanced/patches-5.42.1-dev.1.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.42.1-dev.1)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
