@@ -23,9 +23,8 @@ included-patches = "'Watch history'"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.spotify.music"
 uptodown-dlurl = "https://spotify.en.uptodown.com/android"
 build-mode = "module"
-included-patches = "'Custom theme' 'Hide Create button'"
+included-patches = "'Custom theme'"
 excluded-patches = "'Sanitize sharing links'"
-patcher-args = "-e 'Change lyrics provider' -OlyricsProviderHost=lrclib.net"
 
 [Sync]
 apkmirror-dlurl = "https://www.apkmirror.com/apk/red-apps-ltd/sync-for-reddit"
