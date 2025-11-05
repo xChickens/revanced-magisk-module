@@ -1,3 +1,5 @@
+Music-Extended: 8.30.54  
+Spotify: 9.0.92.1259  
 Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
 Twitter: 10.86.0-release.0  
@@ -8,14 +10,15 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach root ReVanc
 
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
+CLI: inotia00/revanced-cli-5.0.1-all.jar  
+Patches: inotia00/patches-5.13.1-dev.2.rvp  
+[Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.13.1-dev.2)
+
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
-Patches: ReVanced/patches-5.44.0-dev.4.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.44.0-dev.4)
+Patches: ReVanced/patches-5.46.0-dev.2.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.46.0-dev.2)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar    
-
-Skipped:  
-Patches: inotia00/patches-5.13.1-dev.1.rvp    
