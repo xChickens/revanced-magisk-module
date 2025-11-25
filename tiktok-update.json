@@ -1,6 +1,6 @@
 {
-  "version": "v36.5.4 (patches dev.5)",
-  "versionCode": 11,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/11/tiktok-revanced-magisk-v36.5.4-all.zip",
+  "version": "v36.5.4 (patches dev.6)",
+  "versionCode": 12,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/12/tiktok-revanced-magisk-v36.5.4-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
