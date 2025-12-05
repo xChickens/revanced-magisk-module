@@ -1,6 +1,6 @@
 {
-  "version": "v9.0.92.1259 (patches dev.2)",
-  "versionCode": 10,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/10/spotify-revanced-magisk-v9.0.92.1259-all.zip",
+  "version": "v9.1.2.1253 (patches dev.7)",
+  "versionCode": 13,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/13/spotify-revanced-magisk-v9.1.2.1253-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
