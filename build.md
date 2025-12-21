@@ -1,8 +1,7 @@
 Music-Extended: 8.30.54  
-Spotify: 9.1.6.1124  
+Spotify: 9.1.6.1139  
 Sync: v23.06.30-13:39  
 TikTok: 36.5.4  
-Twitter: 10.86.0-release.0  
 YouTube: 20.14.43  
 
 Install [Microg](https://github.com/ReVanced/GmsCore/releases) for non-root YouTube and YT Music APKs  
@@ -15,8 +14,8 @@ Patches: inotia00/patches-5.14.1-dev.5.rvp
 [Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.14.1-dev.5)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
-Patches: ReVanced/patches-5.47.0-dev.15.rvp  
-[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.47.0-dev.15)
+Patches: ReVanced/patches-5.47.0-dev.18.rvp  
+[Changelog](https://github.com/ReVanced/revanced-patches/releases/tag/v5.47.0-dev.18)
 
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
