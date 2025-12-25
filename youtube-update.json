@@ -1,6 +1,6 @@
 {
-  "version": "v20.14.43 (patches dev.18)",
-  "versionCode": 15,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/15/youtube-revanced-magisk-v20.14.43-all.zip",
+  "version": "v20.14.43 (patches dev.1)",
+  "versionCode": 16,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/16/youtube-revanced-magisk-v20.14.43-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
