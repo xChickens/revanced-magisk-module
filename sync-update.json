@@ -1,6 +1,6 @@
 {
-  "version": "vv23.06.30-13:39 (patches dev.1)",
-  "versionCode": 18,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/18/sync-revanced-magisk-v23.06.30-13:39-all.zip",
+  "version": "vv23.06.30 (patches dev.1.rvp)",
+  "versionCode": 23,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/23/sync-revanced-magisk-v23.06.30-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
