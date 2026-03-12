@@ -1,4 +1,5 @@
 Music-Morphe: 8.44.54  
+Sync-Morphe: v23.06.30  
 TikTok: 36.5.4  
 Twitter-Morphe: 11.72.0-release.0  
 YouTube-Morphe: 20.44.38  
@@ -13,8 +14,8 @@ Patches: crimera/patches-3.0.0-dev.10.mpp
 [Changelog](https://github.com/crimera/piko/releases/tag/v3.0.0-dev.10)
 
 CLI: MorpheApp/morphe-cli-1.5.0-all.jar  
-Patches: MorpheApp/patches-1.18.1-dev.2.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.18.1-dev.2)
+Patches: MorpheApp/patches-1.19.0-dev.1.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.19.0-dev.1)
 
 CLI: MorpheApp/morphe-cli-1.5.0-all.jar  
 CLI: ReVanced/revanced-cli-5.0.2-dev.2-all.jar  
