@@ -1,6 +1,6 @@
 {
   "version": "v8.44.54 (patches dev.2.mpp)",
-  "versionCode": 24,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/24/music-morphe-module-v8.44.54-arm64-v8a.zip",
+  "versionCode": 25,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/25/music-morphe-module-v8.44.54-arm64-v8a.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
