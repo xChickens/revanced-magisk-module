@@ -75,7 +75,7 @@ get_prebuilts() {
 		if [ "$ver" = "dev" ]; then
 			local resp
 			resp=$(gh_req "$rv_rel" -) || return 1
-			ver=$(jq -e -r '.[] | .tag_name' <<<"$resp" | get_highest_ver) || return 1
+			ver=$(jq -e -r '[.[] | .tag_name] | first' <<<"$resp") || return 1
 		fi
 		if [ "$ver" = "latest" ]; then
 			rv_rel+="/latest"
@@ -267,7 +267,13 @@ get_patch_last_supported_ver() {
 			return
 		fi
 	fi
-	op=$(java -jar "$cli_jar" list-versions "$patches_jar" -f "$pkg_name" 2>&1 | tail -n +3 | awk '{$1=$1}1')
+	if ! op=$(java -jar "$cli_jar" list-versions "$patches_jar" -f "$pkg_name" 2>&1); then
+		if ! op=$(java -jar "$cli_jar" list-versions -p "$patches_jar" -f "$pkg_name" -b 2>&1); then
+			epr "Could not get versions list from $cli_jar"
+			return 1
+		fi
+	fi
+	op=$((tail -n +3 | awk '{$1=$1}1') <<< "$op")
 	if [ "$op" = "Any" ]; then return; fi
 	pcount=$(head -1 <<<"$op") pcount=${pcount#*(} pcount=${pcount% *}
 	if [ -z "$pcount" ]; then
@@ -461,10 +467,10 @@ get_uptodown_pkg_name() { $HTMLQ --text "tr.full:nth-child(1) > td:nth-child(3)"
 
 # -------------------- archive --------------------
 dl_archive() {
-	local url=$1 version=$2 output=$3 arch=$4
+	local url=$1 version=$2 arch=$4
 	local path version=${version// /}
 	path=$(grep "${version_f#v}-${arch// /}" <<<"$__ARCHIVE_RESP__") || return 1
-	req "${url}/${path}" "$output"
+	req "${url}/${path}" "${TEMP_DIR}/$path"
 }
 get_archive_resp() {
 	local r
@@ -472,7 +478,7 @@ get_archive_resp() {
 	if [ -z "$r" ]; then return 1; else __ARCHIVE_RESP__=$(sed -n 's;^<a href="\(.*\)"[^"]*;\1;p' <<<"$r"); fi
 	__ARCHIVE_PKG_NAME__=$(awk -F/ '{print $NF}' <<<"$1")
 }
-get_archive_vers() { sed 's/^[^-]*-//;s/-\(all\|arm64-v8a\|arm-v7a\)\.apk//g' <<<"$__ARCHIVE_RESP__"; }
+get_archive_vers() { sed 's/^[^-]*-//;s/-\(all\|arm64-v8a\|arm-v7a\)\.apk[m]*//g' <<<"$__ARCHIVE_RESP__"; }
 get_archive_pkg_name() { echo "$__ARCHIVE_PKG_NAME__"; }
 
 # -------------------- direct --------------------
@@ -488,8 +494,9 @@ get_direct_resp() { __DIRECT_APKNAME__=$(awk -F/ '{print $NF}' <<<"$1"); }
 patch_apk() {
 	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5
 	local cmd="java -jar '$cli_jar' patch '$stock_input' --purge -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore \
---keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --keystore-entry-alias=jhc $patcher_args"
+--keystore-entry-password=123456789 --keystore-password=123456789 --signer=xChickens --keystore-entry-alias=xChickens $patcher_args"
 	if [ "$OS" = Android ]; then cmd+=" --custom-aapt2-binary='${AAPT2}'"; fi
+	if [[ "$cli_jar" =~ "revanced-cli-6" ]]; then cmd+=" -b"; fi
 	pr "$cmd"
 	if eval "$cmd"; then [ -f "$patched_apk" ]; else
 		rm "$patched_apk" 2>/dev/null || :
@@ -543,8 +550,10 @@ build_rv() {
 	local list_patches
 	if ! list_patches=$(java -jar "$cli_jar" list-patches "$patches_jar" -f "$pkg_name" -v -p 2>&1); then
 		if ! list_patches=$(java -jar "$cli_jar" list-patches --patches "$patches_jar" -f "$pkg_name" -v -p 2>&1); then
-			epr "Could not get patches list from $cli_jar"
-			return 1
+			if ! list_patches=$(java -jar "$cli_jar" list-patches --patches "$patches_jar" --filter-package-name "$pkg_name" --versions --packages -b 2>&1); then
+				epr "Could not get patches list from $cli_jar"
+				return 1
+			fi
 		fi
 	fi
 
@@ -599,9 +608,12 @@ build_rv() {
 			fi
 			break
 		done
+		if [ -f "${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apkm" ]; then 
+			stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apkm"; 
+		fi
 		if [ ! -f "$stock_apk" ]; then return 0; fi
 	fi
-	if [ ! -f "${stock_apk}.apkm" ] && ! OP=$(check_sig "$stock_apk" "$pkg_name" 2>&1) && ! grep -qFx "ERROR: Missing META-INF/MANIFEST.MF" <<<"$OP"; then
+	if [[ ! "$stock_apk" =~ ".apkm" ]] && ! OP=$(check_sig "$stock_apk" "$pkg_name" 2>&1) && ! grep -qFx "ERROR: Missing META-INF/MANIFEST.MF" <<<"$OP"; then
 		epr "$pkg_name not building, apk signature mismatch '$stock_apk': $OP"
 		return 0
 	fi
@@ -621,7 +633,7 @@ build_rv() {
 	for build_mode in "${build_mode_arr[@]}"; do
 		patcher_args=("${p_patcher_args[@]}")
 		pr "Building '${table}' in '$build_mode' mode"
-		if [ -n "$microg_patch" ] || [ -f "${stock_apk}.apkm" ]; then
+		if [ -n "$microg_patch" ] || [[ "$stock_apk" =~ ".apkm" ]]; then
 			patched_apk="${TEMP_DIR}/${app_name_l}-${rv_brand_f}-${version_f}-${arch_f}-${build_mode}.apk"
 		else
 			patched_apk="${TEMP_DIR}/${app_name_l}-${rv_brand_f}-${version_f}-${arch_f}.apk"
@@ -633,8 +645,13 @@ build_rv() {
 				patcher_args+=("-d \"${microg_patch}\"")
 			fi
 		fi
-
-		local stock_apk_to_patch="${stock_apk}.stripped.apk"
+		
+		local stock_apk_to_patch
+		if [[ "$stock_apk" =~ ".apkm" ]]; then
+			stock_apk_to_patch="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}-stripped.apkm"
+		else
+			stock_apk_to_patch="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}-stripped.apk"
+		fi
 		cp -f "$stock_apk" "$stock_apk_to_patch"
 		if [ "$build_mode" = module ]; then
 			zip -d "$stock_apk_to_patch" "lib/*" >/dev/null 2>&1 || :
@@ -710,7 +727,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=xChickens
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
