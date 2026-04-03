@@ -77,7 +77,7 @@ get_prebuilts() {
 		if [ "$ver" = "dev" ]; then
 			local resp
 			resp=$(gh_req "$rv_rel" -) || return 1
-			ver=$(jq -e -r '.[] | .tag_name' <<<"$resp" | get_highest_ver) || return 1
+			ver=$(jq -e -r '[.[] | .tag_name] | first' <<<"$resp") || return 1
 		fi
 		if [ "$ver" = "latest" ]; then
 			rv_rel+="/latest"
@@ -271,7 +271,7 @@ get_patch_last_supported_ver() {
 		fi
 	fi
 	op=$(patches_list_versions "$cli_jar" "$patches_jar" "$pkg_name") || return 1
-	op=$(sed -n '/(.* patch.*/,$p' <<<"$op" | awk '{$1=$1}1')
+	op=$(sed -n '/\(.* patch.*\)\|Any/,$p' <<<"$op" | awk '{$1=$1}1')
 	if [ "$op" = "Any" ]; then return; fi
 	pcount=$(head -1 <<<"$op") pcount=${pcount#*(} pcount=${pcount% *}
 	if [ -z "$pcount" ]; then
@@ -479,7 +479,8 @@ get_uptodown_pkg_name() { $HTMLQ --text "tr.full:nth-child(1) > td:nth-child(3)"
 dl_archive() {
 	local url=$1 version=$2 output=$3 arch=$4
 	local path version=${version// /}
-	path=$(grep "${version_f#v}-${arch// /}" <<<"$__ARCHIVE_RESP__") || return 1
+	version=${version//:/%3A}
+	path=$(grep "${version#v}-${arch// /}" <<<"$__ARCHIVE_RESP__") || return 1
 	req "${url}/${path}" "$output"
 }
 get_archive_resp() {
@@ -504,7 +505,7 @@ get_direct_resp() { __DIRECT_APKNAME__=$(awk -F/ '{print $NF}' <<<"$1"); }
 patch_apk() {
 	local stock_input=$1 patched_apk=$2 patcher_args=$3 cli_jar=$4 patches_jar=$5
 	local cmd="java -jar '$cli_jar' patch '$stock_input' --purge -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore \
---keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --keystore-entry-alias=jhc $patcher_args"
+--keystore-entry-password=123456789 --keystore-password=123456789 --signer=xChickens --keystore-entry-alias=xChickens $patcher_args"
 
 	# TODO: remove this later
 	local cli_name
@@ -654,7 +655,7 @@ build_rv() {
 				patcher_args+=("-d \"${microg_patch}\"")
 			fi
 		fi
-
+		
 		local stock_apk_to_patch="${stock_apk}.stripped.apk"
 		cp -f "$stock_apk" "$stock_apk_to_patch"
 		if [ "$build_mode" = module ]; then
@@ -731,7 +732,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=xChickens
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
