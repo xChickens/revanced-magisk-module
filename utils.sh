@@ -79,7 +79,7 @@ get_prebuilts() {
 		if [ "$ver" = "dev" ]; then
 			local resp
 			resp=$(gh_req "$rv_rel" -) || return 1
-			ver=$(jq -e -r '.[] | .tag_name' <<<"$resp" | get_highest_ver) || return 1
+			ver=$(jq -e -r '[.[] | .tag_name] | first' <<<"$resp") || return 1
 		fi
 		if [ "$ver" = "latest" ]; then
 			rv_rel+="/latest"
@@ -510,8 +510,8 @@ dl_archive() {
 		merge_splits "${output}.apkm" "$output"
 		return 0
 	fi
-
-	path=$(grep -m1 "${version_f#v}-${arch// /}" <<<"$__ARCHIVE_RESP__") || return 1
+	version=${version//:/%3A}
+	path=$(grep -m1 "${version#v}-${arch// /}" <<<"$__ARCHIVE_RESP__") || return 1
 	if [ "${path##*.}" = "apkm" ]; then
 		output_m="${output}.apkm"
 	else
@@ -546,15 +546,14 @@ patch_apk() {
 	local tmp_files
 	tmp_files="$(pwd)/$(mktemp -d -p "$TEMP_DIR")"
 
-	local cmd="java -jar '$cli_jar' patch '$stock_input' --purge -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore \
---keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --keystore-entry-alias=jhc -t '$tmp_files' $patcher_args"
+	local cmd="java -jar '$cli_jar' patch '$stock_input' -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore \
+--keystore-entry-password=123456789 --keystore-password=123456789 --signer=xChickens --keystore-entry-alias=xChickens -t '$tmp_files' $patcher_args"
 
 	# TODO: remove this later
 	local cli_name
 	cli_name=$(basename "$cli_jar")
 	if [ "${cli_name::8}" = revanced ]; then cmd+=" -b"; fi
 
-	if [ "$OS" = Android ]; then cmd+=" --custom-aapt2-binary='${AAPT2}'"; fi
 	pr "$cmd"
 	if eval "$cmd"; then [ -f "$patched_apk" ]; else
 		rm "$patched_apk" 2>/dev/null || :
@@ -716,7 +715,7 @@ build_rv() {
 				patcher_args+=("-d \"${microg_patch}\"")
 			fi
 		fi
-
+		
 		local stock_apk_to_patch="${stock_apk}.stripped.apk"
 		cp -f "$stock_apk" "$stock_apk_to_patch"
 		if [ "$build_mode" = module ]; then
@@ -821,7 +820,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=xChickens
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
