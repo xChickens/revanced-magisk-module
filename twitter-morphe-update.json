@@ -1,6 +1,6 @@
 {
-  "version": "v11.78.0-release.0 (patches dev.2.mpp)",
-  "versionCode": 27,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/27/twitter-morphe-module-v11.78.0-release.0-all.zip",
+  "version": "v11.78.0-release.0 (patches dev.3.mpp)",
+  "versionCode": 28,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/28/twitter-morphe-module-v11.78.0-release.0-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
