@@ -1,6 +1,6 @@
 {
-  "version": "vv23.06.30-13:39 (patches 1.3.1.mpp)",
-  "versionCode": 27,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/27/sync-morphe-module-v23.06.30-13:39-all.zip",
+  "version": "vv23.06.30-13:39 (patches dev.1.mpp)",
+  "versionCode": 29,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/29/sync-morphe-module-v23.06.30-13:39-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
