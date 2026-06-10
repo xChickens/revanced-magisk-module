@@ -29,7 +29,7 @@ cli-source = "MorpheApp/morphe-cli"
 rv-brand = "patcheddit"
 archive-dlurl = "https://archive.org/download/xChickens-apks/apks/com.laurencedawson.reddit_sync"
 build-mode = "module"
-patcher-args = "-e 'Spoof client' -Oclient-id=FnRpt2V-yImkvii9BZM_3Q"
+patcher-args = "-e 'Spoof client' -Oclient-id=FhIlMAgsFUb7r4ELAeWsFg"
 version = "v23.06.30-13:39"
 
 [Twitter]
