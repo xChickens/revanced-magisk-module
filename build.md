@@ -1,4 +1,4 @@
-Music: 8.51.51  
+Music: 9.15.51  
 Twitter: 11.81.0-release.0  
 YouTube: 20.51.39  
 
@@ -7,15 +7,17 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach YouTube and
 
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
-CLI: MorpheApp/morphe-cli-1.10.0-dev.1-all.jar  
-Patches: crimera/patches-3.5.0-dev.7.mpp  
-[Changelog](https://github.com/crimera/piko/releases/tag/v3.5.0-dev.7)
+CLI: MorpheApp/morphe-cli-1.10.0-dev.3-all.jar  
+Patches: crimera/patches-3.7.0-dev.5.mpp  
+[Changelog](https://github.com/crimera/piko/releases/tag/v3.7.0-dev.5)
 
-CLI: MorpheApp/morphe-cli-1.10.0-dev.1-all.jar  
-Patches: MorpheApp/patches-1.32.0-dev.1.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.32.0-dev.1)
+CLI: MorpheApp/morphe-cli-1.10.0-dev.3-all.jar  
+Patches: MorpheApp/patches-1.32.0.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.32.0)
 
-CLI: MorpheApp/morphe-cli-1.10.0-dev.1-all.jar    
+CLI: MorpheApp/morphe-cli-1.10.0-dev.3-all.jar  
+Patches: MorpheApp/patches-1.33.0-dev.1.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.33.0-dev.1)  
 
 Skipped:  
-Patches: wchill/patches-1.4.1-dev.1.mpp    
+Patches: wchill/patches-1.4.1-dev.1.mpp      
