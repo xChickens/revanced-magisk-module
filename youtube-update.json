@@ -1,6 +1,6 @@
 {
-  "version": "v21.04.223 (patches dev.5.mpp)",
-  "versionCode": 48,
-  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/48/youtube-morphe-module-v21.04.223-all.zip",
+  "version": "v21.04.223 (patches dev.6.mpp)",
+  "versionCode": 49,
+  "zipUrl": "https://github.com/xChickens/revanced-magisk-module/releases/download/49/youtube-morphe-module-v21.04.223-all.zip",
   "changelog": "https://raw.githubusercontent.com/xChickens/revanced-magisk-module/update/build.md"
 }
