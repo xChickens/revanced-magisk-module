@@ -1,79 +1,64 @@
-enable-module-update = true # set this to false if you do not want to receive updates for the module
-parallel-jobs = 1
+enable-module-update = true
+remove-rv-integrations-checks = true
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Morphe"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
+# see https://github.com/xChickens/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
 
 # you can use rvmm-config-gen to generate a config
 
-[YouTube-Morphe]
-app-name = "YouTube"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Morphe"
-build-mode = "both"
+[YouTube]
+build-mode = "module"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
-enable-update-checks = true
-
-[Music-Morphe]
-app-name = "Music"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Morphe"
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-enable-update-checks = true
-
-[Reddit-Morphe]
-app-name = "Reddit"
-rv-brand = "Morphe"
-build-mode = "both"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
-uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
-dpi = "120-640dpi"
-
-[GooglePhotos]
-build-mode = "both"
-patches-source = "RookieEnough/De-Vanced"
-rv-brand = "DeVanced"
-cli-source = "MorpheApp/morphe-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.photos"
-enable-update-checks = true
-
-[Twitter]
-patches-source = "crimera/piko-newx"
-cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Piko"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.twitter.android"
-version = "latest"
-included-patches = "'NewX: Restore Twitter branding'"
-enable-update-checks = true
 
 [Music]
-enabled = false
-build-mode = "both"
-arch = "both"
+build-mode = "module"
+arch = "arm64-v8a"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
-[YouTube]
-enabled = false
-build-mode = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
+[GooglePhotos]
+build-mode = "module"
+patches-source = "RookieEnough/De-Vanced"
+rv-brand = "DeVanced"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.photos"
+
+[Sync]
+build-mode = "module"
+patches-source = "wchill/patcheddit"
+rv-brand = "patcheddit"
+archive-dlurl = "https://archive.org/download/xChickens-apks/apks/com.laurencedawson.reddit_sync"
+patcher-args = "-e 'Spoof client' -Oclient-id=yH0aTnJEt6qUgGn835B4vg"
+version = "v23.06.30-13:39"
+
+[Prime-Video] 
+build-mode = "module"
+arch = "arm64-v8a"
+patches-source = "hoo-dles/morphe-patches"
+archive-dlurl = "https://archive.org/download/xChickens-apks/apks/com.amazon.avod.thirdpartyclient"
+
+[Facebook]
+build-mode = "module"
+arch = "arm64-v8a"
+patches-source = "RookieEnough/De-Vanced"
+rv-brand = "DeVanced"
+archive-dlurl = "https://archive.org/download/xChickens-apks/apks/com.facebook.katana"
+
+[Strava]
+build-mode = "module"
+arch = "arm64-v8a"
+patches-source = "RookieEnough/De-Vanced"
+rv-brand = "DeVanced"
+archive-dlurl = "https://archive.org/download/xChickens-apks/apks/com.strava"
 
 [Twitch]
-enabled = false
-apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
-uptodown-dlurl = "https://twitch.en.uptodown.com/android"
+build-mode = "module"
+arch = "arm64-v8a"
+patches-source = "RookieEnough/De-Vanced"
+rv-brand = "DeVanced"
+archive-dlurl = "https://archive.org/download/xChickens-apks/apks/tv.twitch.android.app"
