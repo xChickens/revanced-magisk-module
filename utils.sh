@@ -84,7 +84,7 @@ get_prebuilts() {
 		if [ "$ver" = "dev" ]; then
 			local resp
 			resp=$(gh_req "$rv_rel" -) || return 1
-			ver=$(jq -e -r '.[] | .tag_name' <<<"$resp" | get_highest_ver) || return 1
+			ver=$(jq -e -r '[.[] | .tag_name] | first' <<<"$resp") || return 1
 		fi
 		if [ "$ver" = "latest" ]; then
 			rv_rel+="/latest"
@@ -544,8 +544,9 @@ dl_archive() {
 		return 0
 	fi
 
-	if ! path=$(grep -m1 "${version_f#v}-${arch// /}" <<<"$__ARCHIVE_RESP__"); then
-		path=$(grep -m1 "${version_f#v}-all" <<<"$__ARCHIVE_RESP__") || return 1
+	version=${version//:/%3A}
+	if ! path=$(grep -m1 "${version#v}-${arch// /}" <<<"$__ARCHIVE_RESP__"); then
+		path=$(grep -m1 "${version#v}-all" <<<"$__ARCHIVE_RESP__") || return 1
 	fi
 
 	if [ "${path##*.}" = "apkm" ]; then
@@ -588,8 +589,8 @@ patch_apk() {
 	local tmp_files
 	tmp_files="$(pwd)/$(mktemp -d -p "$TEMP_DIR")"
 
-	local cmd="java -jar '$cli_jar' patch '$stock_input' -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore \
---keystore-entry-password=123456789 --keystore-password=123456789 --signer=jhc --keystore-entry-alias=jhc -t '$tmp_files' $patcher_args"
+	local cmd="java -jar '$cli_jar' patch '$stock_input' -o '$patched_apk' -p '$patches_jar' --keystore=ks.keystore --continue-on-error \
+--keystore-entry-password=123456789 --keystore-password=123456789 --signer=xChickens --keystore-entry-alias=xChickens -t '$tmp_files' $patcher_args"
 
 	# TODO: remove this later
 	local cli_name
@@ -762,17 +763,17 @@ build_rv() {
 
 		if [ "${args[enable_update_checks]}" = "true" ] && [ "$build_mode" = "apk" ]; then
 			if [ -n "${GITHUB_REPOSITORY-}" ]; then
-				if [ "${GITHUB_REPOSITORY}" = "j-hc/revanced-magisk-module" ]; then
-					local p="$TEMP_DIR/jhc-update-check.mpp"
+				if [ "${GITHUB_REPOSITORY}" = "xChickens/revanced-magisk-module" ]; then
+					local p="$TEMP_DIR/xChickens-update-check.mpp"
 					if [ ! -f $p ]; then
 						local resp dlurl
-						resp=$(gh_req "https://api.github.com/repos/j-hc/morphe-jhc-update-check-patch/releases/latest" -) || return 1
+						resp=$(gh_req "https://api.github.com/repos/xChickens/morphe-xChickens-update-check-patch/releases/latest" -) || return 1
 						dlurl=$(jq -e -r '.assets[0] | .browser_download_url' <<<"$resp") || return 1
 						gh_dl $p "$dlurl" >/dev/null || return 1
 					fi
 					patcher_args+=("-p $p")
 				else
-					wpr "enable-update-checks is only implemented for j-hc/revanced-magisk-module"
+					wpr "enable-update-checks is only implemented for xChickens/revanced-magisk-module"
 				fi
 			fi
 		fi
@@ -881,7 +882,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=j-hc
+author=xChickens
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MODULE_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
