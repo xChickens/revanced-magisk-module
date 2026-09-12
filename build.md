@@ -4,6 +4,7 @@ Music: 9.15.51
 Prime-Video: 3.0.452.1047  
 Strava: 477.14  
 Sync: v23.06.30-13:39  
+Twitch: 25.3.0  
 YouTube: 21.13.164  
 
 Install [Microg](https://github.com/MorpheApp/MicroG-RE/) for non-root YouTube and YT Music APKs  
