@@ -4,7 +4,7 @@ Music: 9.15.51
 Prime-Video: 3.0.452.1047  
 Strava: 477.14  
 Sync: v23.06.30-13:39  
-Twitch: 25.3.0  
+Twitch: 30.7.2  
 YouTube: 21.13.164  
 
 Install [Microg](https://github.com/MorpheApp/MicroG-RE/) for non-root YouTube and YT Music APKs  
@@ -12,6 +12,9 @@ Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to detach YouTube and
 
 [revanced-magisk-module](https://github.com/xChickens/revanced-magisk-module)
   
+Patches: arandomhooman/hoomans-morphe-patches/patches-1.51.1.mpp  
+[Changelog](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.51.1)
+
 Patches: hoo-dles/morphe-patches/patches-1.44.0.mpp  
 [Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.44.0)
 
