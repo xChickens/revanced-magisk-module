@@ -1,4 +1,6 @@
+Facebook: 580.0.0.51.74  
 Music: 9.20.53  
+Prime-Video: 3.0.470.1047  
 Strava: 477.14  
 Sync: v23.06.30-13:39  
 Twitch: 30.7.2  
